@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YMMS Store</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= Navbar ================= -->
+<nav>
+  <h1>YMMS</h1>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links">
+    <li id="home-btn" onclick="goHome()">Home</li>
+    <li onclick="openCart()">Cart (<span id="cart-count">0</span>)</li>
+    <li onclick="contactWhatsApp()">WhatsApp</li>
+  </ul>
+</nav>
+
+<!-- ================= Main Layout ================= -->
+<div class="main-container">
+
+  <!-- ===== Brands Sidebar ===== -->
+  <aside class="brands-sidebar">
+    <h3>Brands</h3>
+    <ul id="brands-menu"></ul>
+  </aside>
+
+  <!-- ===== Right Content ===== -->
+  <div class="right-content">
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-carousel">
+        <img src="images/publicity/AB.jpg" class="active">
+        <img src="images/publicity/BC.jpg">
+        <img src="images/publicity/CD.jpg">
+        <img src="images/publicity/DE.jpg">
+        <img src="images/publicity/EF.jpg">
+        <img src="images/publicity/FG.jpg">
+        <img src="images/publicity/GH.jpg">
+         <img src="images/publicity/EF.jpg">
+        <img src="images/publicity/FG.jpg">
+        <img src="images/publicity/GH.jpg">
+        <div class="dots" id="hero-dots"></div>
+      </div>
+    </section>
+
+    <!-- Publicity Gallery -->
+    <section id="publicity">
+      <h2>Latest Designs</h2>
+      <div class="gallery-container">
+        <button class="arrow left" onclick="scrollGallery(-1)">&#10094;</button>
+        <div class="publicity-gallery" id="publicity-gallery"></div>
+        <button class="arrow right" onclick="scrollGallery(1)">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+      <h2>Products</h2>
+      <div class="cards" id="product-cards"></div>
+    </section>
+
+  </div>
+</div>
+
+<!-- ================= Cart ================= -->
+<div id="cart" class="cart">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <span class="close-cart" onclick="openCart()">✖</span>
+  </div>
+  <ul id="cart-items"></ul>
+  <div class="cart-total">
+    <span>Total:</span>
+    <span>Rs <span id="total">0</span></span>
+  </div>
+  <button class="checkout-btn" onclick="checkout()">Order on WhatsApp</button>
+</div>
+
+<!-- ================= Quick View Popup ================= -->
+<div id="quick-view" class="quick-view">
+  <div class="quick-view-content">
+    <span class="close-popup" onclick="closeQuickView()">✖</span>
+    <img id="popup-img" src="" alt="">
+    <h3 id="popup-name"></h3>
+    <p id="popup-brand"></p>
+    <p id="popup-price"></p>
+    <button id="popup-add-cart">Add to Cart</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
